@@ -54,9 +54,9 @@ and then running "bin/buildout"
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/ustenders.content/issues
-- Source Code: https://github.com/collective/ustenders.content
-- Documentation: https://docs.plone.org/foo/bar
+- Issue Tracker: https://github.com/mingtak/ustenders.content/issues
+- Source Code: https://github.com/mingtak/ustenders.content
+- Documentation:
 
 
 Support
