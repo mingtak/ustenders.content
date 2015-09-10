@@ -61,6 +61,22 @@
 
   <browser:page
       name="view"
+      for="ustenders.content.interfaces.IClassCode"
+      class=".views.ClassCodeView"
+      template="template/classcode_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="ustenders.content.interfaces.INaics"
+      class=".views.NaicsView"
+      template="template/naics_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
       for="ustenders.content.interfaces.IMod"
       class=".views.ModView"
       template="template/mod_view.pt"
