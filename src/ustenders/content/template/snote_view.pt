@@ -16,6 +16,7 @@
        <fieldset>
          <legend>Basic Info.</legend>
          <div>
+
 <table class="listing">
 <tbody>
   <tr tal:condition="context/date">
@@ -210,7 +211,8 @@
        </fieldset>
    </div>
 
-
+<a class="context" href="./"
+   tal:content="context/Type" i18n:translate=""></a>
 
 
 
