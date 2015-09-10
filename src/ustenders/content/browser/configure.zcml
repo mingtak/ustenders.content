@@ -1,0 +1,38 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="ustenders.content">
+
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot
+      directory="overrides"
+      layer="ustenders.content.interfaces.IUstendersContentLayer"
+      />
+
+  <!-- Publish static files -->
+  <browser:resourceDirectory
+      name="ustenders.content"
+      directory="static"
+      />
+
+
+  <!-- browser views -->
+  <browser:page
+      for="*"
+      name="get_notice"
+      permission="cmf.ManagePortal"
+      class=".get_notice.GetNotice"
+      />
+<!--
+  <browser:page
+      for="*"
+      name="import_data"
+      permission="cmf.ManagePortal"
+      class=".import_data.ImportData"
+      />
+-->
+
+
+</configure>

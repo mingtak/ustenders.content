@@ -1,0 +1,162 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="ustenders.content">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+<p tal:condition="context/date">
+  <strong i18n:translate="">Date:</strong>
+  <span tal:replace="context/date"/>
+</p>
+
+<p tal:condition="context/agency">
+  <strong i18n:translate="">Agency:</strong>
+  <span tal:replace="context/agency"/>
+</p>
+
+<p tal:condition="context/office">
+  <strong i18n:translate="">Office:</strong>
+  <span tal:replace="context/office"/>
+</p>
+
+<p tal:condition="context/ntype">
+  <strong i18n:translate="">Notice Type:</strong> 
+  <span tal:replace="context/ntype" i18n:translate=""/>
+</p>
+
+<p tal:condition="context/email">
+  <strong i18n:translate="">Email:</strong> 
+  <span tal:replace="context/email"/>
+</p>
+
+<p tal:condition="context/location">
+  <strong i18n:translate="">Location:</strong> 
+  <span tal:replace="context/location"/>
+</p>
+
+<p tal:condition="context/zip">
+  <strong i18n:translate="">ZIP:</strong> 
+  <span tal:replace="context/zip"/>
+</p>
+
+<p tal:condition="context/naics">
+  <strong i18n:translate="">NAICS:</strong> 
+  <span tal:replace="string:${context/naics/to_object/Title} (${context/naics/to_object/naicsCode})"/>
+</p>
+
+<p tal:condition="context/offadd">
+  <strong i18n:translate="">Office Address:</strong>
+  <span tal:replace="context/offadd"/>
+</p>
+
+<p tal:condition="context/solnbr">
+  <strong i18n:translate="">Solicitation Number:</strong> 
+  <span tal:replace="context/solnbr"/>
+</p>
+
+<p tal:condition="context/respdate">
+  <strong i18n:translate="">Response Date:</strong> 
+  <span tal:replace="context/respdate"/>
+</p>
+
+<p tal:condition="context/contact">
+  <strong i18n:translate="">Contact:</strong> 
+  <span tal:replace="context/contact"/>
+</p>
+
+<div tal:condition="context/desc">
+  <strong i18n:translate="">Description:</strong>
+  <div tal:replace="structure context/desc/raw"/>
+</div>
+
+<p tal:condition="context/link">
+  <strong i18n:translate="">Link:</strong> 
+  <span tal:replace="context/link"/>
+</p>
+
+<br />
+<p tal:condition="context/url">
+  <strong i18n:translate="">Url:</strong>
+  <a tal:attributes="href context/url" target="_blank">
+    <span tal:replace="context/url"/>
+  </a>
+</p>
+
+<p tal:condition="context/setAside">
+  <strong i18n:translate="">Original Set Aside:</strong> 
+  <span tal:replace="context/setAside"/>
+</p>
+
+<p tal:condition="context/popcountry">
+  <strong i18n:translate="">Pop Country:</strong> 
+  <span tal:replace="context/popcountry"/>
+</p>
+
+<p tal:condition="context/popaddress">
+  <strong i18n:translate="">Pop Address:</strong> 
+  <div tal:replace="structure context/popaddress"/>
+</p>
+
+<p tal:condition="context/awdnbr">
+  <strong i18n:translate="">Contract Award Number:</strong> 
+  <span tal:replace="context/awdnbr"/>
+</p>
+
+<p tal:condition="context/awardee">
+  <strong i18n:translate="">Contractor Awarded Name & Address:</strong>
+  <span tal:replace="context/awardee"/>
+</p>
+
+<p tal:condition="context/modnbr">
+  <strong i18n:translate="">Modification Number:</strong>
+  <span tal:replace="context/modnbr"/>
+</p>
+
+<p tal:condition="context/foja">
+  <strong i18n:translate="">Fair Opportunity / Limited Sources Justification Authority:</strong>
+  <span tal:replace="context/foja"/>
+</p>
+
+<p tal:condition="context/linenbr">
+  <strong i18n:translate="">Contract Line Item Number:</strong>
+  <span tal:replace="context/linenbr"/>
+</p>
+
+<p tal:condition="context/archdate">
+  <strong i18n:translate="">Archive Date:</strong>
+  <span tal:replace="context/archdate"/>
+</p>
+
+<p tal:condition="context/stauth">
+  <strong i18n:translate="">J&A Statutory Authority:</strong>
+  <span tal:replace="context/stauth"/>
+</p>
+
+<p tal:condition="context/donbr">
+  <strong i18n:translate="">Task/Delivery Order Number:</strong>
+  <span tal:replace="context/donbr"/>
+</p>
+
+<p tal:condition="context/awdamt">
+  <strong i18n:translate="">Contract Award Dollar Amount:</strong>
+  <span tal:replace="context/awdamt"/>
+</p>
+
+<p tal:condition="context/awddate">
+  <strong i18n:translate="">Contract Award Date:</strong>
+  <span tal:replace="context/awddate"/>
+</p>
+
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

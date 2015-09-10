@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+
+  <index name="noticeTypeName" meta_type="FieldIndex">
+    <indexed_attr value="noticeTypeName" />
+  </index>
+  <column value="noticeTypeName"/>
+
+  <index name="date" meta_type="DateIndex">
+    <indexed_attr value="date" />
+  </index>
+  <column value="date"/>
+
+  <index name="agency" meta_type="FieldIndex">
+    <indexed_attr value="agency" />
+  </index>
+  <column value="agency"/>
+
+  <index name="ntype" meta_type="FieldIndex">
+    <indexed_attr value="ntype" />
+  </index>
+  <column value="ntype"/>
+<!--
+  <index name="classcod" meta_type="FieldIndex">
+    <indexed_attr value="classcod" />
+  </index>
+  <column value="classcod"/>
+
+  <index name="naics" meta_type="FieldIndex">
+    <indexed_attr value="naics" />
+  </index>
+  <column value="naics"/>
+-->
+  <index name="respdate" meta_type="DateIndex">
+    <indexed_attr value="respdate" />
+  </index>
+  <column value="respdate"/>
+
+  <index name="md5" meta_type="FieldIndex">
+    <indexed_attr value="md5" />
+  </index>
+  <column value="md5"/>
+
+  <index name="pCode" meta_type="FieldIndex">
+    <indexed_attr value="pCode" />
+  </index>
+  <column value="pCode"/>
+
+  <index name="naicsCode" meta_type="FieldIndex">
+    <indexed_attr value="naicsCode" />
+  </index>
+  <column value="naicsCode"/>
+
+</object>
+

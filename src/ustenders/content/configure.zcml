@@ -1,0 +1,151 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="ustenders.content">
+
+  <includeDependencies package="." />
+
+  <i18n:registerTranslations directory="locales" />
+
+  <include package=".browser" />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="ustenders.content"
+      directory="profiles/default"
+      description="Installs the ustenders.content add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="ustenders.content-postInstall"
+      title="ustenders.content post_install import step"
+      description="Post install import step from ustenders.content"
+      handler=".setuphandlers.post_install">
+  </genericsetup:importStep>
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="ustenders.content"
+      directory="profiles/uninstall"
+      description="Uninstalls the ustenders.content add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="ustenders.content-uninstall"
+      title="ustenders.content uninstall import step"
+      description="Import step run during ininstalling ustenders.content"
+      handler=".setuphandlers.uninstall">
+  </genericsetup:importStep>
+
+  <!-- Adapter for catalog -->
+  <adapter name="noticeTypeName" factory=".catalog.noticeTypeName_indexer" />
+  <adapter name="date" factory=".catalog.date_indexer" />
+  <adapter name="agency" factory=".catalog.agency_indexer" />
+  <adapter name="ntype" factory=".catalog.ntype_indexer" />
+<!--
+  <adapter name="classcod" factory=".catalog.classcod_indexer" />
+  <adapter name="naics" factory=".catalog.naics_indexer" />
+-->
+  <adapter name="respdate" factory=".catalog.respdate_indexer" />
+  <adapter name="md5" factory=".catalog.md5_indexer" />
+  <adapter name="pCode" factory=".catalog.pCode_indexer" />
+  <adapter name="naicsCode" factory=".catalog.naicsCode_indexer" />
+
+
+  <!-- setting view for dexterity content type -->
+
+  <browser:page
+      name="view"
+      for="ustenders.content.interfaces.IMod"
+      class=".views.ModView"
+      template="template/mod_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="ustenders.content.interfaces.ISnote"
+      class=".views.SnoteView"
+      template="template/snote_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="ustenders.content.interfaces.ISrcsgt"
+      class=".views.SrcsgtView"
+      template="template/srcsgt_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="ustenders.content.interfaces.IAward"
+      class=".views.AwardView"
+      template="template/award_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="ustenders.content.interfaces.ICombine"
+      class=".views.CombineView"
+      template="template/combine_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="ustenders.content.interfaces.IAmdcss"
+      class=".views.AmdcssView"
+      template="template/amdcss_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="ustenders.content.interfaces.IUnarchive"
+      class=".views.UnarchiveView"
+      template="template/unarchive_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="ustenders.content.interfaces.IJa"
+      class=".views.JaView"
+      template="template/ja_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="ustenders.content.interfaces.IFairopp"
+      class=".views.FairoppView"
+      template="template/fairopp_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="ustenders.content.interfaces.IArchive"
+      class=".views.ArchiveView"
+      template="template/archive_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="ustenders.content.interfaces.IPresol"
+      class=".views.PresolView"
+      template="template/presol_view.pt"
+      permission="zope2.View"
+      />
+
+
+</configure>

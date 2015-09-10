@@ -1,0 +1,6 @@
+[report]
+include =
+    src/ustenders/*
+omit =
+    */test*
+    */upgrades/*
