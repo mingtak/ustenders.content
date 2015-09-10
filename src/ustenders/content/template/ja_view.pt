@@ -66,9 +66,22 @@
   <td><span tal:replace="context/ntype" i18n:translate=""/></td>
 </tr>
 
+<tr tal:condition="context/classcod">
+  <td><strong i18n:translate="">Classification</strong></td>
+  <td>
+    <a tal:attributes="href context/classcod/to_object/absolute_url">
+      <span tal:replace="string:${context/classcod/to_object/Title}"/>
+    </a>
+  </td>
+</tr>
+
 <tr tal:condition="context/naics">
   <td><strong i18n:translate="">NAICS</strong></td>
-  <td><span tal:replace="string:${context/naics/to_object/Title} (${context/naics/to_object/naicsCode})"/></td>
+  <td>
+    <a tal:attributes="href context/naics/to_object/absolute_url">
+      <span tal:replace="string:${context/naics/to_object/Title} (${context/naics/to_object/naicsCode})"/>
+    </a>
+  </td>
 </tr>
 
 <tr tal:condition="context/desc">
