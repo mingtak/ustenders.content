@@ -211,7 +211,8 @@
        </fieldset>
    </div>
 
-<a class="context" href="./"
+<a class="context"
+   tal:attributes="href python:context.getParentNode().absolute_url()"
    tal:content="context/Type" i18n:translate=""></a>
 
 
