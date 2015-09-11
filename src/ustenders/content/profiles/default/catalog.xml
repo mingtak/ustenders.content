@@ -51,5 +51,26 @@
   </index>
   <column value="naicsCode"/>
 
+  <index name="naics_2" meta_type="FieldIndex">
+    <indexed_attr value="naics_2" />
+  </index>
+  <column value="naics_2"/>
+
+  <index name="naics_3" meta_type="FieldIndex">
+    <indexed_attr value="naics_3" />
+  </index>
+  <column value="naics_3"/>
+
+  <index name="naics_4" meta_type="FieldIndex">
+    <indexed_attr value="naics_4" />
+  </index>
+  <column value="naics_4"/>
+
+  <index name="naics_5" meta_type="FieldIndex">
+    <indexed_attr value="naics_5" />
+  </index>
+  <column value="naics_5"/>
+
+
 </object>
 

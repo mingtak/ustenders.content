@@ -45,7 +45,30 @@ def md5_indexer(obj):
 def pCode_indexer(obj):
      return obj.pCode
 
+
 @indexer(interfaces.INaics)
 def naicsCode_indexer(obj):
      return obj.naicsCode
 
+
+@indexer(interfaces.INaics)
+def naics_2_indexer(obj):
+     return obj.naicsCode[:2]
+
+
+@indexer(interfaces.INaics)
+def naics_3_indexer(obj):
+     if len(obj.naicsCode) >= 3:
+         return obj.naicsCode[:3]
+
+
+@indexer(interfaces.INaics)
+def naics_4_indexer(obj):
+     if len(obj.naicsCode) >= 4:
+         return obj.naicsCode[:4]
+
+
+@indexer(interfaces.INaics)
+def naics_5_indexer(obj):
+     if len(obj.naicsCode) >= 5:
+         return obj.naicsCode[:5]
