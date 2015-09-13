@@ -25,12 +25,27 @@
       permission="cmf.ManagePortal"
       class=".get_notice.GetNotice"
       />
+
+  <browser:page
+      for="plone.app.contenttypes.interfaces.ILink"
+      name="by-service"
+      permission="zope2.View"
+      class=".by_service.ByService"
+      />
+
+  <browser:page
+      for="plone.app.contenttypes.interfaces.ILink"
+      name="by-product"
+      permission="zope2.View"
+      class=".by_product.ByProduct"
+      />
+
 <!--
   <browser:page
       for="*"
-      name="import_data"
+      name="special"
       permission="cmf.ManagePortal"
-      class=".import_data.ImportData"
+      class=".special.Special"
       />
 -->
 

@@ -48,6 +48,22 @@ class NaicsView(BrowserView, PloneApi):
         return back_references(context, 'naics')
 
 
+    def get_next_level(self):
+        context = self.context
+        catalog = context.portal_catalog
+        naicsLen = len(context.naicsCode)
+        if naicsLen >= 5:
+            queryLen = 6
+        else:
+            queryLen = naicsLen + 2
+        indexKey = 'naics_%s' % naicsLen
+
+        if naicsLen == 6:
+            return None
+        return catalog({'type':context.Type(), indexKey:context.naicsCode, 'naicsLen':queryLen},
+                       sort_on='created', sort_order='reverse')
+
+
 class ModView(BrowserView, PloneApi):
     """ Mod View (default)
     """

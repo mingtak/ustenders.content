@@ -42,6 +42,11 @@ def md5_indexer(obj):
 
 
 @indexer(interfaces.IClassCode)
+def procurement_indexer(obj):
+     return obj.procurement
+
+
+@indexer(interfaces.IClassCode)
 def pCode_indexer(obj):
      return obj.pCode
 
@@ -72,3 +77,8 @@ def naics_4_indexer(obj):
 def naics_5_indexer(obj):
      if len(obj.naicsCode) >= 5:
          return obj.naicsCode[:5]
+
+
+@indexer(interfaces.INaics)
+def naicsLen_indexer(obj):
+     return len(obj.naicsCode)

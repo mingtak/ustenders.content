@@ -55,11 +55,12 @@
   <adapter name="md5" factory=".catalog.md5_indexer" />
   <adapter name="pCode" factory=".catalog.pCode_indexer" />
   <adapter name="naicsCode" factory=".catalog.naicsCode_indexer" />
+  <adapter name="procurement" factory=".catalog.procurement_indexer" />
   <adapter name="naics_2" factory=".catalog.naics_2_indexer" />
   <adapter name="naics_3" factory=".catalog.naics_3_indexer" />
   <adapter name="naics_4" factory=".catalog.naics_4_indexer" />
   <adapter name="naics_5" factory=".catalog.naics_5_indexer" />
-
+  <adapter name="naicsLen" factory=".catalog.naicsLen_indexer" />
 
 
   <!-- setting view for dexterity content type -->

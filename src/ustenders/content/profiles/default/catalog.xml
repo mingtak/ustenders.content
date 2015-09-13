@@ -41,6 +41,11 @@
   </index>
   <column value="md5"/>
 
+  <index name="procurement" meta_type="FieldIndex">
+    <indexed_attr value="procurement" />
+  </index>
+  <column value="procurement"/>
+
   <index name="pCode" meta_type="FieldIndex">
     <indexed_attr value="pCode" />
   </index>
@@ -71,6 +76,10 @@
   </index>
   <column value="naics_5"/>
 
+  <index name="naicsLen" meta_type="FieldIndex">
+    <indexed_attr value="naicsLen" />
+  </index>
+  <column value="naicsLen"/>
 
 </object>
 

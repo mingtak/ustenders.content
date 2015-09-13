@@ -8,6 +8,27 @@ import transaction
 from DateTime import DateTime
 from datetime import date
 from plone.app.textfield.value import RichTextValue
+from zope.event import notify
+from zope.lifecycleevent import ObjectModifiedEvent
+import os; os.environ['PLONE_CSRF_DISABLED'] = 'true'
+
+
+# Special
+class Special(BrowserView):
+
+    def __call__(self):
+        portal = api.portal.get()
+        catalog = portal.portal_catalog
+        brain = catalog(Type='Naics')
+        for item in brain:
+            title = item.Title
+            if title.endswith('T'):
+                import pdb ; pdb.set_trace()
+#                obj = item.getObject()
+#                obj.title = obj.title[:-1]
+#                transaction.commit()
+#                obj.reindexObject()
+#                break
 
 
 CLASS_COD = [
