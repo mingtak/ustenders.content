@@ -5,6 +5,15 @@ from zope.event import notify
 from zope.lifecycleevent import ObjectModifiedEvent
 
 
+def move_content_to_top(obj, event):
+    """
+    Moves Items to the top of its folder
+    """
+    folder = obj.getParentNode()
+    if folder != None:
+        folder.moveObjectsToTop(obj.id)
+
+
 def discuss_default_value(object, event):
     """ """
     request = object.REQUEST
