@@ -1,0 +1,11 @@
+<div id="portal-anontools" tal:condition="python:not view.is_anonymous()">
+  <ul>
+    <li>
+      <span tal:replace="python:'Hi, %s' % view.get_current().getProperty('fullname')"/>
+      <a title="Log out"
+         tal:attributes="href python:'%s/logout' % view.get_portal().absolute_url()">
+        (Log out)
+      </a>
+    </li>
+  </ul>
+</div>

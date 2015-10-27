@@ -211,6 +211,18 @@
        </fieldset>
    </div>
 
+<div tal:define="back_references python:view.get_back_references()"
+     tal:condition="back_references">
+  <h5>Related discussion:</h5>
+  <ul>
+    <li tal:repeat="item back_references">
+      <a  tal:attributes="href item/absolute_url" tal:content="python:'%s' % item.Title()" />
+      <span tal:replace="python:'[ post date:- %s ]' % item.modified().strftime('%Y-%m-%d')" />
+    </li>
+  </ul>
+
+</div>
+
 <a class="context"
    tal:attributes="href python:context.getParentNode().absolute_url()"
    tal:content="context/Type" i18n:translate=""></a>

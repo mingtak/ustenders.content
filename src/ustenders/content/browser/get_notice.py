@@ -84,7 +84,7 @@ class GetNotice(BrowserView):
             if '</%s>' % contentTypeName in line:
                 break
 
-            if '>' in line and line.split('>')[0].split('<')[1] in ATTRIBUTE_LIST:
+            if line.strip().startswith('<') and '>' in line and line.split('>')[0].split('<')[1] in ATTRIBUTE_LIST:
                 attributeName = line.split('>')[0].split('<')[1]
                 attributeContent = line.split('>')[1]
                 if attributeName == 'DESC' and attributeContent.startswith('Link To Document') :
@@ -112,6 +112,10 @@ class GetNotice(BrowserView):
         )
 
 #        import pdb; pdb.set_trace()
+
+        metaDescription = {}
+        metaDescription['subject'] = object.Title()
+
         object.noticeTypeName = object.getParentNode().Title()
 
         try:
@@ -120,12 +124,17 @@ class GetNotice(BrowserView):
             month = int(attributes['DATE'][0:2])
             day = int(attributes['DATE'][2:])
             object.date = date(year, month, day)
+            metaDescription['date'] = object.date
         except:
             pass
 
         object.agency = attributes.get('AGENCY')
+        if object.agency:
+            metaDescription['agency'] = object.agency
         object.office = attributes.get('OFFICE')
         object.ntype = attributes.get('NTYPE')
+        if object.ntype:
+            metaDescription['ntype'] = object.ntype
         object.email = attributes.get('EMAIL')
         object.location = attributes.get('LOCATION')
         object.zip = attributes.get('ZIP')
@@ -201,6 +210,16 @@ class GetNotice(BrowserView):
 
         # md5 checksum
         object.md5 = md5.new(str(attributes)).hexdigest()
+
+        metaString = ''
+        if metaDescription.has_key('date'):
+            metaString += 'Announcement at %s, ' % metaDescription['date']
+        metaString += 'and subject is %s, ' % metaDescription['subject']
+        if metaDescription.has_key('agency'):
+            metaString += 'from %s, ' % metaDescription['agency']
+        if metaDescription.has_key('ntype'):
+            metaString += 'notice category is %s.' % metaDescription['ntype']
+        object.description = metaString
 
 #        import pdb; pdb.set_trace()
         notify(ObjectModifiedEvent(object))

@@ -13,4 +13,5 @@
   <object name="Fairopp" meta_type="Dexterity FTI"/>
   <object name="Archive" meta_type="Dexterity FTI"/>
   <object name="Presol" meta_type="Dexterity FTI"/>
+  <object name="Discuss" meta_type="Dexterity FTI"/>
 </object>

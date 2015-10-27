@@ -13,6 +13,11 @@ from zope.lifecycleevent import ObjectModifiedEvent
 import os; os.environ['PLONE_CSRF_DISABLED'] = 'true'
 
 
+class TestFunction(BrowserView):
+
+    def __call__(self):
+        import pdb; pdb.set_trace()
+
 # Special
 class Special(BrowserView):
 

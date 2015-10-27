@@ -17,6 +17,27 @@ class IUstendersContentLayer(IDefaultBrowserLayer):
 
 from z3c.relationfield.schema import RelationList, RelationChoice
 
+
+class IDiscuss(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=True,
+    )
+
+    text = RichText(
+        title=_(u"Text"),
+        required=True,
+    )
+
+    form.omitted('relatedItem')
+    relatedItem = RelationChoice(
+        title=_(u"Related Item"),
+        vocabulary="plone.app.vocabularies.Catalog",
+        required=False,
+    )
+
+
 class INotice(Interface):
 
     title = schema.TextLine(
@@ -24,8 +45,7 @@ class INotice(Interface):
         required=True,
     )
 
-    # 保留不用
-    form.omitted('description')
+#    form.omitted('description')
     description = schema.Text(
         title=_(u"Description"),
         required=False,

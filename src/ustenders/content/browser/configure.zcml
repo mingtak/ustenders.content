@@ -40,6 +40,19 @@
       class=".by_product.ByProduct"
       />
 
+  <browser:page
+      for="plone.app.contenttypes.interfaces.ILink"
+      name="set_profile"
+      permission="zope2.View"
+      class=".set_profile.HelloWorldFormView"
+      />
+
+  <browser:page
+    for="*"
+    name="sitemap_for_google"
+    permission="zope2.View"
+    class=".sitemap.SitemapForGoogle" />
+
 <!--
   <browser:page
       for="*"
@@ -48,6 +61,14 @@
       class=".special.Special"
       />
 -->
+
+  <browser:page
+      for="*"
+      name="testFunction"
+      permission="cmf.ManagePortal"
+      class=".special.TestFunction"
+      />
+
 
 
 </configure>

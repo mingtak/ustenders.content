@@ -1,0 +1,68 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="ustenders.content">
+
+    <browser:viewlet
+        name="opptoday.social_viewlet_notice"
+        for="ustenders.content.interfaces.INotice"
+        class=".social.SocialViewlet"
+        permission="zope2.View"
+        template="template/notice_social_viewlet.pt"
+        layer="ustenders.content.interfaces.Interface"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        />
+
+    <browser:viewlet
+        name="opptoday.social_viewlet_discuss"
+        for="ustenders.content.interfaces.IDiscuss"
+        class=".social.SocialViewlet"
+        permission="zope2.View"
+        template="template/discuss_social_viewlet.pt"
+        layer="ustenders.content.interfaces.Interface"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        />
+
+    <browser:viewlet
+        name="opptoday.disqus_viewlet_discuss"
+        for="ustenders.content.interfaces.IDiscuss"
+        class=".social.SocialViewlet"
+        permission="zope2.View"
+        template="template/disqus_viewlet.pt"
+        layer="ustenders.content.interfaces.Interface"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        />
+
+    <browser:viewlet
+        name="opptoday.google_ad_for_notice"
+        for="ustenders.content.interfaces.INotice"
+        class=".googlead.GoogleAdViewlet"
+        permission="zope2.View"
+        template="template/google_ad_for_notice_viewlet.pt"
+        layer="ustenders.content.interfaces.Interface"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        />
+
+    <browser:viewlet
+        name="opptoday.google_ad_for_notice"
+        for="ustenders.content.interfaces.IDiscuss"
+        class=".googlead.GoogleAdViewlet"
+        permission="zope2.View"
+        template="template/google_ad_for_notice_viewlet.pt"
+        layer="ustenders.content.interfaces.Interface"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        />
+
+    <browser:viewlet
+        name="opptoday.hello_user"
+        for="*"
+        class=".hello_user.HelloUserViewlet"
+        permission="zope2.View"
+        template="template/hello_user_viewlet.pt"
+        layer="ustenders.content.interfaces.Interface"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        />
+
+</configure>
+

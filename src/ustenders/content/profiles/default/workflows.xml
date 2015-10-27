@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<object name="portal_workflow" meta_type="Plone Workflow Tool">
+ <property
+    name="title">Contains workflow definitions for your portal</property>
+ <bindings>
+  <default>
+   <bound-workflow workflow_id="simple_publication_workflow"/>
+  </default>
+  <type type_id="Amdcss">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="Archive">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="Award">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="ClassCode">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="Combine">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="Fairopp">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="Ja">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="Mod">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="Naics">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="Presol">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="Snote">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="Srcsgt">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="Unarchive">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="Discuss">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+ </bindings>
+</object>

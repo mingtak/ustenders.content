@@ -67,54 +67,98 @@ class NaicsView(BrowserView, PloneApi):
 class ModView(BrowserView, PloneApi):
     """ Mod View (default)
     """
+    def get_back_references(self):
+        context = self.context
+        return back_references(context, 'relatedItem')
 
 
 class SnoteView(BrowserView, PloneApi):
     """ Snote View (default)
     """
+    def get_back_references(self):
+        context = self.context
+        return back_references(context, 'relatedItem')
+
 
 
 class SrcsgtView(BrowserView, PloneApi):
     """ Srcsgt View (default)
     """
+    def get_back_references(self):
+        context = self.context
+        return back_references(context, 'relatedItem')
 
 
 class AwardView(BrowserView, PloneApi):
     """ Award View (default)
     """
+    def get_back_references(self):
+        context = self.context
+        return back_references(context, 'relatedItem')
 
 
 class CombineView(BrowserView, PloneApi):
     """ Combine View (default)
     """
+    def get_back_references(self):
+        context = self.context
+        return back_references(context, 'relatedItem')
 
 
 class AmdcssView(BrowserView, PloneApi):
     """ Amdcss View (default)
     """
+    def get_back_references(self):
+        context = self.context
+        return back_references(context, 'relatedItem')
 
 
 class UnarchiveView(BrowserView, PloneApi):
     """ Unarchive View (default)
     """
+    def get_back_references(self):
+        context = self.context
+        return back_references(context, 'relatedItem')
 
 
 class JaView(BrowserView, PloneApi):
     """ Ja View (default)
     """
+    def get_back_references(self):
+        context = self.context
+        return back_references(context, 'relatedItem')
 
 
 class FairoppView(BrowserView, PloneApi):
     """ Fairopp View (default)
     """
+    def get_back_references(self):
+        context = self.context
+        return back_references(context, 'relatedItem')
 
 
 class ArchiveView(BrowserView, PloneApi):
     """ Archive View (default)
     """
+    def get_back_references(self):
+        context = self.context
+        return back_references(context, 'relatedItem')
 
 
 class PresolView(BrowserView, PloneApi):
     """ Presol View (default)
+    """
+    def get_back_references(self):
+        context = self.context
+        return back_references(context, 'relatedItem')
+
+
+class DiscussView(BrowserView, PloneApi):
+    """ Discuss View (default)
+    """
+
+
+class DocumentHeroView(BrowserView, PloneApi):
+    """ Document Hero View
     """
 

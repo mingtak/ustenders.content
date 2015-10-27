@@ -11,6 +11,8 @@
   <i18n:registerTranslations directory="locales" />
 
   <include package=".browser" />
+  <include package=".viewlet" />
+  <include package=".event" />
 
   <genericsetup:registerProfile
       name="default"
@@ -166,6 +168,22 @@
       for="ustenders.content.interfaces.IPresol"
       class=".views.PresolView"
       template="template/presol_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="ustenders.content.interfaces.IDiscuss"
+      class=".views.DiscussView"
+      template="template/discuss_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="hero_view"
+      for="plone.app.contenttypes.interfaces.IDocument"
+      class=".views.DocumentHeroView"
+      template="template/document_hero_view.pt"
       permission="zope2.View"
       />
 

@@ -1,0 +1,20 @@
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5603ff81dee53fad" async="async"></script>
+
+<?python
+from plone import api
+anon = api.user.is_anonymous()
+?>
+
+<div>
+
+    <a class="context"
+       tal:condition="not:anon"
+       tal:attributes="href string:/forum/++add++Discuss?uid=${context/UID}"
+       i18n:translate="">Post Discuss</a>
+
+    <a class="addthis_counter addthis_bubble_style" style="float:right"></a>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <div class="addthis_sharing_toolbox" style="float:right"></div>
+<p></p>
+</div>

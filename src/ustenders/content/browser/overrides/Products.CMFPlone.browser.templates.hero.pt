@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      tal:omit-tag=""
+      i18n:domain="plone">
+
+<div class="principal" role="complementary"
+           style="background:#FFF url(http://www.opptoday.com/system/images/hero/@@images/image);
+                  background-size:100% 100%;
+                  color:#FFF8C5">
+    <div class="container">
+        <div class="gigantic">
+          <h1 i18n:translate="">Welcome!</h1>
+          <p i18n:translate="">Opportunity Today</p>
+        </div>
+    </div>
+</div>
+
+</html>
