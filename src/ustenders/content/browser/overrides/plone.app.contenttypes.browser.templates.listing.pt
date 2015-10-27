@@ -19,7 +19,12 @@
   </div>
 
   <metal:listingmacro define-macro="listing">
-    <tal:results define="batch view/batch">
+    <tal:results define="batch view/batch;
+
+                previous python:batch.previous;
+                   next python:batch.next">
+
+
       <tal:listing condition="batch">
         <div class="entries" metal:define-slot="entries">
 
@@ -36,18 +41,18 @@
 </ul>
 
 
-
-
-
-
-
-
+    <p>
+      <a tal:condition="previous" class="context"
+         tal:attributes="href string:${request/URL0}?b_start:int=${previous/first}"
+         href="previous_url">Prev</a>
+      <a tal:condition="next" class="context"
+         tal:attributes="href string:${request/URL0}?b_start:int=${next/first}"
+         href="next_url">Next</a>
+    </p>
 
 
 
         </div>
-
-        <div metal:use-macro="context/batch_macros/macros/navigation" />
 
       </tal:listing>
 
