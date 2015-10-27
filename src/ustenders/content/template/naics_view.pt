@@ -11,25 +11,31 @@
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
 
-<tal:naics define="catalog python:context.portal_catalog;
-                   naicsLen python:len(context.naicsCode)"
-           condition="python:naicsLen < 6">
-    <tal:brain define="brain view/get_next_level">
-<h5 tal:repeat="item brain">
-  <a tal:content="item/Title" tal:attributes="href item/getURL"></a>
-</h5>
-    </tal:brain>
-</tal:naics>
 
+  <tal:define define="results view/get_back_references;
+                   start request/start|python:0;
+                   batch python:modules['ZTUtils'].Batch(results, 
+                                                         size=20, 
+                                                         start=start);
+                   previous python:batch.previous;
+                   next python:batch.next">
 
-
-<tal:back_reference define="items view/get_back_references">
-  <ul>
-    <li tal:repeat="item items">
-      <a tal:attributes="href item/absolute_url" tal:content="item/Title" />
-    </li>
-  </ul>
-</tal:back_reference>
+    <ul>   
+      <li tal:repeat="item batch">
+        <a tal:attributes="href item/absolute_url" tal:content="item/Title" />
+<span tal:replace="python:' -- %s' % item.created().strftime('%Y/%m/%d')" />
+      </li>
+    </ul>
+      
+    <p>
+      <a tal:condition="previous" class="context"
+         tal:attributes="href string:${request/URL0}?start:int=${previous/first}"
+         href="previous_url">Prev</a>
+      <a tal:condition="next" class="context"
+         tal:attributes="href string:${request/URL0}?start:int=${next/first}"
+         href="next_url">Next</a>
+    </p>
+  </tal:define>
 
 </metal:content-core>
 </metal:content-core>

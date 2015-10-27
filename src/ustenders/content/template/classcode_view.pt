@@ -23,6 +23,7 @@
     <ul>   
       <li tal:repeat="item batch">
         <a tal:attributes="href item/absolute_url" tal:content="item/Title" />
+<span tal:replace="python:' -- %s' % item.created().strftime('%Y/%m/%d')" />
       </li>
     </ul>
       
