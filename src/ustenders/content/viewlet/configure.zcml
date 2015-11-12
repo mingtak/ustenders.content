@@ -41,7 +41,7 @@
         permission="zope2.View"
         template="template/google_ad_for_notice_viewlet.pt"
         layer="ustenders.content.interfaces.Interface"
-        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
         />
 
     <browser:viewlet

@@ -33,7 +33,7 @@
 <ul>
           <li tal:repeat="item batch" metal:define-macro="entries">
 
-        <a tal:attributes="href item/absolute_url" tal:content="item/Title" />
+        <a tal:attributes="href python:item.getURL()" tal:content="item/Title" />
 <span tal:replace="python:' -- %s' % item.created.strftime('%Y/%m/%d')" />
 
 
